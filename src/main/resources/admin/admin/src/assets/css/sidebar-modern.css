@@ -1,0 +1,88 @@
+/* 侧边栏现代化样式增强 */
+
+/* Open状态 - 侧边栏背景渐变 */
+.scrollbar-wrapper-open + * {
+	background: linear-gradient(180deg, #667eea 0%, #764ba2 100%) !important;
+	box-shadow: 4px 0 20px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* 菜单项悬停效果优化 */
+.scrollbar-wrapper-open .el-menu-vertical-2 > .el-menu-item.home > .el-tooltip:hover,
+.scrollbar-wrapper-open .el-menu-vertical-2 > .el-menu-item.other > .el-tooltip:hover,
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu.home /deep/ .el-submenu__title:hover,
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu.other /deep/ .el-submenu__title:hover,
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu.user /deep/ .el-submenu__title:hover {
+	background: rgba(255, 255, 255, 0.95) !important;
+	color: #667eea !important;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+	transform: translateX(5px);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 激活状态 */
+.scrollbar-wrapper-open .el-menu-vertical-2 > .el-menu-item.home.is-active > .el-tooltip,
+.scrollbar-wrapper-open .el-menu-vertical-2 > .el-menu-item.other.is-active > .el-tooltip,
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu.other.is-active /deep/ .el-submenu__title {
+	background: rgba(255, 255, 255, 0.95) !important;
+	color: #667eea !important;
+	box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3) !important;
+	font-weight: 600;
+}
+
+/* 子菜单项样式 */
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu.other .el-menu .el-menu-item:hover,
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu.home .el-menu .el-menu-item:hover {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+	color: #fff !important;
+	transform: translateX(3px);
+	box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu.other .el-menu .el-menu-item.is-active,
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu.home .el-menu .el-menu-item.is-active {
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+	color: #fff !important;
+	font-weight: 600;
+	box-shadow: 0 3px 10px rgba(102, 126, 234, 0.4);
+}
+
+/* 子菜单容器美化 */
+.scrollbar-wrapper-open .el-menu-vertical-2 /deep/ .el-submenu.other .el-menu,
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu.home .el-menu {
+	background: rgba(255, 255, 255, 0.95) !important;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
+	border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 用户信息区域美化 */
+.el-scrollbar .userinfo {
+	background: rgba(255, 255, 255, 0.1) !important;
+	backdrop-filter: blur(10px);
+	border-radius: 16px !important;
+	margin: 20px !important;
+	padding: 20px !important;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.el-scrollbar .userinfo .el-image {
+	border: 3px solid rgba(255, 255, 255, 0.3) !important;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* 图标增强 */
+.scrollbar-wrapper-open .el-menu-vertical-2 .iconfont,
+.scrollbar-wrapper-open .el-menu-vertical-2 i[class^="el-icon-"] {
+	transition: transform 0.3s ease;
+}
+
+.scrollbar-wrapper-open .el-menu-vertical-2 > .el-menu-item:hover .iconfont,
+.scrollbar-wrapper-open .el-menu-vertical-2 > .el-menu-item:hover i[class^="el-icon-"],
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu:hover .iconfont,
+.scrollbar-wrapper-open .el-menu-vertical-2 .el-submenu:hover i[class^="el-icon-"] {
+	transform: scale(1.1);
+}
+
+/* 菜单背景 */
+.scrollbar-wrapper-open .el-menu-vertical-2 {
+	background: transparent !important;
+}

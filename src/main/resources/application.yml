@@ -1,0 +1,51 @@
+server:
+  port: 8083
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    context-path: /springbootu4nad998
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springbootu4nad998?useUnicode=true&characterEncoding=utf-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: "123456"
+  
+  # 文件上传限制配置
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+  # 静态资源映射配置
+  # 包含 classpath 和文件系统路径，便于开发时热更静态资源
+  web:
+    resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${user.dir}/static/,file:${user.dir}/src/main/resources/static/
+
+# MyBatis-Plus 配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  # 实体类扫描包路径
+  type-aliases-package: com.entity
+  global-config:
+    # 主键类型 1:"用户输入ID"
+    id-type: 1
+    # 字段策略 1:"非 NULL 判断"
+    field-strategy: 1
+    # 驼峰下划线转换
+    db-column-underline: true
+    # 刷新 mapper
+    refresh-mapper: true
+    # 逻辑删除配置
+    logic-delete-value: -1
+    logic-not-delete-value: 0
+    # 自定义 SQL 注入器 (MyBatis-Plus 2.x 版本语法)
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    # Oracle 需配置 JdbcType.NULL，MySQL 默认即可，此处显式配置为 null
+    jdbc-type-for-null: 'null'
